@@ -1,0 +1,85 @@
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+var _a;
+import { Controller, Get, Post, Put, Patch, Delete, Param, } from '@nestjs/common';
+import { CourseService } from './course.service';
+let CourseController = class CourseController {
+    courseService;
+    constructor(courseService) {
+        this.courseService = courseService;
+    }
+    getAllCourses() {
+        return this.courseService.getAllCourses();
+    }
+    getCourseById(id) {
+        return this.courseService.getCourseById(id);
+    }
+    createCourse() {
+        return this.courseService.createCourse();
+    }
+    updateCourse(id) {
+        return this.courseService.updateCourse(id);
+    }
+    patchCourse(id) {
+        return this.courseService.patchCourse(id);
+    }
+    deleteCourse(id) {
+        return this.courseService.deleteCourse(id);
+    }
+};
+__decorate([
+    Get(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], CourseController.prototype, "getAllCourses", null);
+__decorate([
+    Get(':id'),
+    __param(0, Param('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", String)
+], CourseController.prototype, "getCourseById", null);
+__decorate([
+    Post(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], CourseController.prototype, "createCourse", null);
+__decorate([
+    Put(':id'),
+    __param(0, Param('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", String)
+], CourseController.prototype, "updateCourse", null);
+__decorate([
+    Patch(':id'),
+    __param(0, Param('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", String)
+], CourseController.prototype, "patchCourse", null);
+__decorate([
+    Delete(':id'),
+    __param(0, Param('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", String)
+], CourseController.prototype, "deleteCourse", null);
+CourseController = __decorate([
+    Controller('course'),
+    __metadata("design:paramtypes", [typeof (_a = typeof CourseService !== "undefined" && CourseService) === "function" ? _a : Object])
+], CourseController);
+export { CourseController };
+//# sourceMappingURL=course.controller.js.map
